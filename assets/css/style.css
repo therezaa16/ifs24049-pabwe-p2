@@ -1,0 +1,710 @@
+/* =========================================================
+   TOBAMIND AI — LANDING PAGE STYLESHEET
+   Studi kasus PABWE P2 — 3.1 Landing Page (CSS murni)
+   File ini WAJIB external CSS, tanpa framework apapun.
+
+   Daftar teknik CSS yang dipakai (untuk referensi video):
+   1. CSS Variables (:root)
+   2. Universal, element, class, id, attribute selector
+   3. Combinator (turunan, child >)
+   4. Pseudo-class (:hover, :focus, :checked, :nth-child)
+   5. Pseudo-element (::before, ::after, ::placeholder)
+   6. Box model (padding, margin, border, border-radius)
+   7. Flexbox
+   8. CSS Grid
+   9. Position (relative, absolute, fixed, sticky)
+   10. Responsive (media query)
+   11. Typography + Google Fonts
+   12. Background, border, shadow
+   13. Transition, transform, animation (keyframes)
+   14. calc(), clamp(), min(), minmax()
+   ========================================================= */
+
+/* ---------- 1. CSS VARIABLES ---------- */
+:root {
+  --primary: #4338ca;
+  --primary-dark: #3730a3;
+  --primary-soft: #eef2ff;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+
+  --text: #1e1b2e;
+  --text-light: #64748b;
+
+  --bg: #ffffff;
+  --bg-alt: #f8fafc;
+  --border: #e2e8f0;
+
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 28px;
+
+  --shadow: 0 10px 30px rgba(30, 27, 46, 0.08);
+  --shadow-lg: 0 20px 45px rgba(30, 27, 46, 0.14);
+
+  --container: 1180px;
+
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  --transition: 0.25s ease;
+}
+
+/* ---------- 2. RESET (universal selector) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  /* clamp() -> font-size ikut lebar layar, tapi dibatasi min & max */
+  font-size: clamp(15px, 1vw + 12px, 17px);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: min(var(--container), 92%);
+  margin-inline: auto;
+}
+
+section {
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.section-tag {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-head {
+  max-width: 620px;
+  margin-bottom: 48px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+  margin-bottom: 12px;
+}
+
+.section-head p {
+  color: var(--text-light);
+}
+
+/* ---------- BUTTONS (class selector + pseudo-class + transition) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition),
+    background var(--transition), color var(--transition);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(67, 56, 202, 0.28);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-outline {
+  border-color: var(--border);
+  color: var(--text);
+  background: #fff;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* ---------- 3. HEADER / NAVBAR (flexbox + position: sticky) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.brand .logo-icon {
+  color: var(--primary);
+}
+
+.brand .accent {
+  color: var(--accent-dark);
+}
+
+/* combinator: nav > ul > li (child selector) */
+.nav-menu > ul {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-menu a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+/* pseudo-element ::after untuk underline animasi saat hover */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width var(--transition);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a:focus-visible::after {
+  width: 100%;
+}
+
+.nav-menu a.nav-cta {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+}
+
+.nav-menu a.nav-cta::after {
+  display: none;
+}
+
+/* hamburger (mobile only) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+/* ---------- 4. HERO (grid + position absolute untuk dekorasi) ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-alt);
+  padding-block: clamp(56px, 10vw, 120px);
+}
+
+/* pseudo-element sebagai elemen dekoratif blob, pakai position absolute */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--primary-soft), transparent 70%);
+  z-index: 0;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  margin-bottom: 18px;
+}
+
+.hero-text .highlight {
+  color: var(--primary);
+}
+
+.hero-text p {
+  color: var(--text-light);
+  max-width: 46ch;
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: clamp(20px, 4vw, 40px);
+}
+
+.hero-stats div strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.hero-stats div span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.hero-visual {
+  position: relative;
+}
+
+.hero-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(28px, 4vw, 44px);
+  border: 1px solid var(--border);
+}
+
+.hero-card .hero-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.hero-card .hero-icon-grid div {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  /* animation: elemen "berdenyut" halus supaya terasa "AI aktif" */
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.hero-card .hero-icon-grid div:nth-child(2n) {
+  animation-delay: 0.4s;
+}
+
+.hero-card .hero-icon-grid div:nth-child(3n) {
+  animation-delay: 0.8s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.92); opacity: 0.7; }
+}
+
+/* badge melayang di atas kartu (position absolute) */
+.floating-badge {
+  position: absolute;
+  bottom: -18px;
+  left: -18px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 24px rgba(217, 119, 6, 0.35);
+}
+
+/* ---------- 5. LAYANAN (CSS Grid, auto-fit + minmax) ---------- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 26px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.service-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* ---------- 6. TENTANG (flexbox 2 kolom) ---------- */
+.about {
+  background: var(--bg-alt);
+}
+
+.about-grid {
+  display: flex;
+  gap: clamp(32px, 6vw, 72px);
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1 1 420px;
+}
+
+.about-text p {
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.about-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+/* pseudo-element sebagai custom bullet (checklist) */
+.about-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-stats {
+  flex: 1 1 280px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.stat-box {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.stat-box strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.stat-box span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ---------- 7. KONTAK (grid + form styling) ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 5vw, 60px);
+  align-items: start;
+}
+
+.contact-info-box {
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 4vw, 40px);
+}
+
+.contact-info-box h3 {
+  margin-bottom: 14px;
+}
+
+.contact-info-box p {
+  opacity: 0.9;
+  margin-bottom: 26px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.contact-item span.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.contact-form {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* attribute selector: styling semua input teks & textarea sekaligus */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* pseudo-class :focus + pseudo-element ::placeholder */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #a3aab8;
+}
+
+/* ---------- 8. FOOTER ---------- */
+.site-footer {
+  background: #191330;
+  color: #c9c6de;
+  padding-block: 56px 24px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.footer-col h4 {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* ---------- 9. RESPONSIVE (media query) ---------- */
+@media (max-width: 860px) {
+  .hero-grid,
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-menu {
+    position: fixed;
+    inset: 0 0 0 30%;
+    top: 68px;
+    background: #fff;
+    height: calc(100vh - 68px);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
+    transform: translateX(100%);
+    transition: transform var(--transition);
+  }
+
+  .nav-menu > ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 22px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* pseudo-class :checked -> buka menu mobile tanpa JavaScript */
+  #nav-toggle:checked ~ .nav-menu {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .about-stats,
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    row-gap: 14px;
+  }
+}

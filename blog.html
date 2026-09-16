@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog AI — TobaMind AI</title>
+  <meta name="description" content="Blog TobaMind AI: artikel seputar Generative AI, LLM, etika AI, dan otomasi bisnis untuk UMKM." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+  <!-- Penyesuaian kecil untuk konsistensi brand (bukan pengganti Bootstrap) -->
+  <style>
+    :root {
+      --brand: #4338ca;
+      --brand-dark: #3730a3;
+      --brand-soft: #eef2ff;
+      --accent: #f59e0b;
+    }
+    body { font-family: "Inter", sans-serif; background: #f8fafc; }
+    h1, h2, h3, .navbar-brand, .fw-display { font-family: "Sora", sans-serif; }
+    .navbar-brand svg { color: var(--brand); }
+    .btn-brand { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .btn-brand:hover { background: var(--brand-dark); border-color: var(--brand-dark); color: #fff; }
+    .text-brand { color: var(--brand) !important; }
+    .bg-brand-soft { background: var(--brand-soft) !important; }
+    .cover-placeholder {
+      aspect-ratio: 16 / 9;
+      border-radius: .5rem .5rem 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: #fff;
+    }
+    .cover-1 { background: linear-gradient(135deg, #4338ca, #6366f1); }
+    .cover-2 { background: linear-gradient(135deg, #0ea5e9, #4338ca); }
+    .cover-3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .cover-4 { background: linear-gradient(135deg, #16a34a, #0ea5e9); }
+    .blog-card { transition: transform .2s ease, box-shadow .2s ease; border: 1px solid #e2e8f0; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(30,27,46,.1); }
+    .hero-bar { background: var(--brand-soft); }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <svg width="28" height="28" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="9" cy="9" r="4" fill="currentColor" />
+          <circle cx="25" cy="9" r="4" fill="currentColor" />
+          <circle cx="17" cy="25" r="4" fill="currentColor" />
+          <line x1="9" y1="9" x2="25" y2="9" stroke="currentColor" stroke-width="2" />
+          <line x1="9" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
+          <line x1="25" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
+        </svg>
+        TobaMind <span class="text-warning">AI</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link active fw-semibold text-brand" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
+          <li class="nav-item"><a class="btn btn-brand btn-sm px-3 mt-2 mt-lg-0" href="index.html#kontak">Konsultasi</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="hero-bar py-5">
+    <div class="container">
+      <p class="text-brand fw-semibold mb-1"><i class="bi bi-journal-text"></i> Blog</p>
+      <h1 class="fw-display fw-bold">Insight seputar Artificial Intelligence</h1>
+      <p class="text-secondary mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis — ditulis untuk pembaca umum maupun pelaku UMKM.</p>
+    </div>
+  </div>
+
+  <!-- FILTER (visual, opsional) -->
+  <div class="container mt-4">
+    <div class="d-flex flex-wrap gap-2">
+      <button class="btn btn-brand btn-sm rounded-pill">Semua</button>
+      <button class="btn btn-outline-secondary btn-sm rounded-pill">Generative AI</button>
+      <button class="btn btn-outline-secondary btn-sm rounded-pill">LLM</button>
+      <button class="btn btn-outline-secondary btn-sm rounded-pill">Etika AI</button>
+      <button class="btn btn-outline-secondary btn-sm rounded-pill">Otomasi</button>
+    </div>
+  </div>
+
+  <!-- BLOG GRID -->
+  <div class="container py-5">
+    <div class="row g-4">
+
+      <!-- Artikel 1 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card blog-card h-100">
+          <div class="cover-placeholder cover-1"><i class="bi bi-stars"></i></div>
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Generative AI</span>
+            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none stretched-link-title">Apa itu Generative AI dan Bagaimana Bisnis Bisa Memanfaatkannya</a></h5>
+            <p class="card-text text-secondary small flex-grow-1">Kenalan dengan Generative AI dan contoh penerapannya untuk konten, desain, hingga layanan pelanggan bisnis kecil.</p>
+            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+              <span><i class="bi bi-person"></i> Tim TobaMind</span>
+              <span><i class="bi bi-calendar3"></i> 3 Sep 2026</span>
+              <span><i class="bi bi-clock"></i> 4 mnt</span>
+            </div>
+            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 2 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card blog-card h-100">
+          <div class="cover-placeholder cover-2"><i class="bi bi-chat-square-dots"></i></div>
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> LLM</span>
+            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h5>
+            <p class="card-text text-secondary small flex-grow-1">Penjelasan sederhana tentang cara kerja LLM, model di balik chatbot AI yang sekarang banyak dipakai bisnis.</p>
+            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+              <span><i class="bi bi-person"></i> Tim TobaMind</span>
+              <span><i class="bi bi-calendar3"></i> 28 Agu 2026</span>
+              <span><i class="bi bi-clock"></i> 5 mnt</span>
+            </div>
+            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 3 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card blog-card h-100">
+          <div class="cover-placeholder cover-3"><i class="bi bi-shield-check"></i></div>
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Etika AI</span>
+            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis: Apa yang Perlu Diperhatikan</a></h5>
+            <p class="card-text text-secondary small flex-grow-1">Prinsip dasar etika AI — transparansi, privasi data, dan tanggung jawab — yang penting dipahami pelaku usaha.</p>
+            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+              <span><i class="bi bi-person"></i> Tim TobaMind</span>
+              <span><i class="bi bi-calendar3"></i> 15 Agu 2026</span>
+              <span><i class="bi bi-clock"></i> 6 mnt</span>
+            </div>
+            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artikel 4 -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card blog-card h-100">
+          <div class="cover-placeholder cover-4"><i class="bi bi-robot"></i></div>
+          <div class="card-body d-flex flex-column">
+            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Otomasi</span>
+            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI dalam Melayani Pelanggan 24 Jam</a></h5>
+            <p class="card-text text-secondary small flex-grow-1">Mengulas alur kerja chatbot AI, dari memahami pesan pelanggan hingga memberi respons yang relevan secara otomatis.</p>
+            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+              <span><i class="bi bi-person"></i> Tim TobaMind</span>
+              <span><i class="bi bi-calendar3"></i> 2 Agu 2026</span>
+              <span><i class="bi bi-clock"></i> 4 mnt</span>
+            </div>
+            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 fw-bold fs-5 mb-2">
+            <svg width="24" height="24" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="9" cy="9" r="4" fill="currentColor" />
+              <circle cx="25" cy="9" r="4" fill="currentColor" />
+              <circle cx="17" cy="25" r="4" fill="currentColor" />
+              <line x1="9" y1="9" x2="25" y2="9" stroke="currentColor" stroke-width="2" />
+              <line x1="9" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
+              <line x1="25" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
+            </svg>
+            TobaMind AI
+          </div>
+          <p class="text-secondary small">Solusi AI untuk UMKM dan bisnis lokal Sumatera Utara.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="mb-3">Navigasi</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="index.html" class="link-light link-underline-opacity-0 text-decoration-none">Beranda</a></li>
+            <li class="mb-2"><a href="blog.html" class="link-light link-underline-opacity-0 text-decoration-none">Blog</a></li>
+            <li class="mb-2"><a href="cv.html" class="link-light link-underline-opacity-0 text-decoration-none">CV</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="mb-3">Kontak</h6>
+          <p class="text-secondary small mb-0">halo@tobamind.ai<br />+62 812-0000-0000<br />Laguboti, Toba, Sumut</p>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4 mb-3" />
+      <p class="text-center text-secondary small mb-0">&copy; 2026 TobaMind AI. Dibuat untuk studi kasus praktikum PABWE.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

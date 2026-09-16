@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Bintang Simanjuntak | TobaMind AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS 4 — Play CDN (sesuai ketentuan praktikum) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- @theme: brand token custom (fitur Tailwind v4) -->
+  <style type="text/tailwindcss">
+    @theme {
+      --color-brand: #4338ca;
+      --color-brand-dark: #3730a3;
+      --color-brand-soft: #eef2ff;
+      --color-accent: #f59e0b;
+      --font-display: "Sora", sans-serif;
+      --font-body: "Inter", sans-serif;
+    }
+  </style>
+</head>
+<body class="font-body bg-slate-50 text-slate-800">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-display font-bold text-slate-900">
+        <svg width="28" height="28" viewBox="0 0 34 34" class="text-brand">
+          <circle cx="9" cy="9" r="4" fill="currentColor" />
+          <circle cx="25" cy="9" r="4" fill="currentColor" />
+          <circle cx="17" cy="25" r="4" fill="currentColor" />
+          <line x1="9" y1="9" x2="25" y2="9" stroke="currentColor" stroke-width="2" />
+          <line x1="9" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
+          <line x1="25" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
+        </svg>
+        TobaMind <span class="text-accent">AI</span>
+      </a>
+      <nav class="flex items-center gap-4 sm:gap-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-brand transition">Beranda</a>
+        <a href="blog.html" class="hover:text-brand transition">Blog</a>
+        <a href="cv.html" class="text-brand font-semibold">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-5 py-10 sm:py-14">
+
+    <!-- HEADER PROFIL -->
+    <section class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-10 mb-10">
+      <div class="w-28 h-28 shrink-0 rounded-full bg-brand-soft text-brand flex items-center justify-center text-4xl font-display font-bold">
+        BS
+      </div>
+      <div class="text-center sm:text-left">
+        <h1 class="font-display text-2xl sm:text-3xl font-bold text-slate-900">Bintang Simanjuntak</h1>
+        <p class="text-brand font-medium mt-1">Aspiring AI Engineer &middot; Full-Stack Web Developer</p>
+        <p class="text-slate-500 mt-3 max-w-xl">
+          Mahasiswa Sarjana Informatika di Institut Teknologi Del, tertarik pada pengembangan web
+          dan penerapan AI untuk menyelesaikan masalah nyata di sekitar komunitas lokal.
+        </p>
+
+        <div class="flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-2 mt-5 text-sm text-slate-600">
+          <span class="flex items-center gap-1.5"><i data-icon="mail">✉️</i> bintang.simanjuntak@example.com</span>
+          <span class="flex items-center gap-1.5">📱 +62 813-0000-0000</span>
+          <span class="flex items-center gap-1.5">📍 Laguboti, Toba, Sumatera Utara</span>
+        </div>
+        <div class="flex flex-wrap justify-center sm:justify-start gap-3 mt-4 text-sm">
+          <a href="#" class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-brand hover:text-white transition">GitHub ↗</a>
+          <a href="#" class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-brand hover:text-white transition">LinkedIn ↗</a>
+          <a href="index.html" class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-brand hover:text-white transition">Portfolio ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- KOLOM KIRI -->
+      <div class="md:col-span-2 space-y-8">
+
+        <!-- RINGKASAN -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-3">Tentang Saya</h2>
+          <p class="text-slate-600 leading-relaxed">
+            Mahasiswa Informatika dengan minat besar pada pengembangan web dan teknologi AI terapan.
+            Terbiasa bekerja dalam tim untuk membangun produk digital, mulai dari perancangan
+            antarmuka hingga implementasi front-end. Senang mempelajari hal baru dan berkontribusi
+            pada proyek yang berdampak bagi komunitas lokal.
+          </p>
+        </section>
+
+        <!-- PENDIDIKAN -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-4">Pendidikan</h2>
+          <div class="space-y-5">
+            <div class="flex gap-4">
+              <div class="w-2 h-2 mt-2 rounded-full bg-brand shrink-0"></div>
+              <div>
+                <p class="font-semibold text-slate-800">Institut Teknologi Del</p>
+                <p class="text-sm text-slate-500">Sarjana Informatika — Fakultas Informatika dan Teknik Elektro</p>
+                <p class="text-xs text-slate-400 mt-1">2023 — Sekarang</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-2 h-2 mt-2 rounded-full bg-slate-300 shrink-0"></div>
+              <div>
+                <p class="font-semibold text-slate-800">SMA Negeri 1 Balige</p>
+                <p class="text-sm text-slate-500">Jurusan IPA</p>
+                <p class="text-xs text-slate-400 mt-1">2020 — 2023</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PENGALAMAN -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-4">Pengalaman</h2>
+          <div class="space-y-6">
+            <div>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <p class="font-semibold text-slate-800">Anggota Tim Pengembang Web — Proyek Kampus</p>
+                <span class="text-xs text-slate-400">2025</span>
+              </div>
+              <p class="text-sm text-slate-500 mt-1">
+                Membangun antarmuka website untuk proyek kelompok mata kuliah, mulai dari wireframe
+                hingga implementasi HTML/CSS/JavaScript.
+              </p>
+            </div>
+            <div>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <p class="font-semibold text-slate-800">Asisten Praktikum Pemrograman Dasar</p>
+                <span class="text-xs text-slate-400">2024 — 2025</span>
+              </div>
+              <p class="text-sm text-slate-500 mt-1">
+                Membantu mahasiswa tingkat awal memahami konsep dasar pemrograman dan debugging kode
+                pada sesi praktikum mingguan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROYEK -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-4">Proyek</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="index.html" class="block rounded-xl border border-slate-200 p-4 hover:border-brand hover:shadow-md transition">
+              <p class="font-semibold text-slate-800">TobaMind AI — Landing Page</p>
+              <p class="text-sm text-slate-500 mt-1">Landing page perusahaan jasa AI, dibangun dengan HTML &amp; CSS murni.</p>
+            </a>
+            <a href="blog.html" class="block rounded-xl border border-slate-200 p-4 hover:border-brand hover:shadow-md transition">
+              <p class="font-semibold text-slate-800">Blog AI TobaMind</p>
+              <p class="text-sm text-slate-500 mt-1">Daftar &amp; detail artikel seputar AI, dibangun dengan Bootstrap 5.</p>
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- KOLOM KANAN -->
+      <div class="space-y-8">
+
+        <!-- KEAHLIAN -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-4">Keahlian</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">HTML &amp; CSS</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">Bootstrap 5</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">Tailwind CSS</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">JavaScript</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">Git &amp; GitHub</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">Figma</span>
+            <span class="px-3 py-1.5 text-sm rounded-full bg-brand-soft text-brand font-medium">Python</span>
+          </div>
+        </section>
+
+        <!-- SERTIFIKAT -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-4">Sertifikat</h2>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-start gap-2">
+              <span class="text-accent">★</span>
+              <span class="text-slate-600">Dasar-Dasar Web Development — Pelatihan Kampus, 2025</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent">★</span>
+              <span class="text-slate-600">Pengantar Kecerdasan Buatan — Kelas Daring, 2025</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- BAHASA -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+          <h2 class="font-display text-lg font-bold text-slate-900 mb-4">Bahasa</h2>
+          <div class="space-y-2 text-sm text-slate-600">
+            <div class="flex justify-between"><span>Bahasa Indonesia</span><span class="text-slate-400">Native</span></div>
+            <div class="flex justify-between"><span>Bahasa Inggris</span><span class="text-slate-400">Menengah</span></div>
+            <div class="flex justify-between"><span>Bahasa Batak Toba</span><span class="text-slate-400">Menengah</span></div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200 py-6 mt-6">
+    <p class="text-center text-xs text-slate-400">&copy; 2026 Bintang Simanjuntak — CV dibuat untuk studi kasus praktikum PABWE.</p>
+  </footer>
+
+</body>
+</html>
