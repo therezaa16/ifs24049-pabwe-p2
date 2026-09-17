@@ -26,7 +26,7 @@
   --primary-dark: #3730a3;
   --primary-soft: #eef2ff;
   --accent: #f59e0b;
-  --accent-dark: #d97706;
+  --accent-dark: #92400e; /* diperdalam agar lolos WCAG AA (kontras 4.5:1) */
 
   --text: #1e1b2e;
   --text-light: #64748b;
@@ -360,15 +360,23 @@ h3 {
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
+  overflow: hidden;
+}
+
+/* Gambar dalam hero icon grid dibuat penuh & proporsional (object-fit) */
+.hero-card .hero-icon-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   /* animation: elemen "berdenyut" halus supaya terasa "AI aktif" */
   animation: pulse 2.4s ease-in-out infinite;
 }
 
-.hero-card .hero-icon-grid div:nth-child(2n) {
+.hero-card .hero-icon-grid div:nth-child(2n) img {
   animation-delay: 0.4s;
 }
 
-.hero-card .hero-icon-grid div:nth-child(3n) {
+.hero-card .hero-icon-grid div:nth-child(3n) img {
   animation-delay: 0.8s;
 }
 
@@ -382,7 +390,7 @@ h3 {
   position: absolute;
   bottom: -18px;
   left: -18px;
-  background: var(--accent);
+  background: var(--accent-dark); /* var(--accent) terlalu terang utk teks putih */
   color: #fff;
   padding: 12px 18px;
   border-radius: var(--radius-sm);

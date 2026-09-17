@@ -17,6 +17,9 @@
       --brand-dark: #3730a3;
       --brand-soft: #eef2ff;
       --accent: #f59e0b;
+      --accent-text: #92400e; /* versi gelap accent, lolos kontras WCAG AA */
+      --gray-safe: #475569;   /* pengganti #6c757d yang lebih gelap */
+      --gray-on-dark: #adb5bd; /* abu-abu terang utk teks sekunder di footer gelap */
     }
     body { font-family: "Inter", sans-serif; background: #f8fafc; }
     h1, h2, h3, .navbar-brand, .fw-display { font-family: "Sora", sans-serif; }
@@ -57,6 +60,16 @@
     }
     .related-card { transition: transform .2s ease; }
     .related-card:hover { transform: translateY(-4px); }
+
+    /* ==== Perbaikan kontras warna (WCAG 2 AA) ==== */
+    .brand-accent-text { color: var(--accent-text); }
+    .text-muted-safe { color: var(--gray-safe) !important; }
+    .footer-text-safe { color: var(--gray-on-dark) !important; }
+
+    /* ==== Perbaikan urutan heading (heading-order), tampilan visual dipertahankan ==== */
+    h2.sec-title { font-size: 1.25rem; font-weight: 700; }
+    h3.related-title { font-size: 1rem; font-weight: 600; margin-bottom: 0; }
+    h3.footer-title { font-size: 1rem; font-weight: 600; margin-bottom: .75rem; }
   </style>
 </head>
 <body>
@@ -73,7 +86,7 @@
           <line x1="9" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
           <line x1="25" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
         </svg>
-        TobaMind <span class="text-warning">AI</span>
+        TobaMind <span class="brand-accent-text">AI</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -149,7 +162,7 @@
             oleh orang yang sebenarnya membutuhkannya."
           </blockquote>
 
-          <h5 class="fw-bold mt-4 mb-3">Beberapa tips memulai adopsi generative AI untuk bisnis:</h5>
+          <h2 class="sec-title mt-4 mb-3">Beberapa tips memulai adopsi generative AI untuk bisnis:</h2>
           <ul class="list-unstyled">
             <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mulai dari satu use case kecil, misalnya draf caption promosi.</li>
             <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Selalu review hasil AI sebelum dipublikasikan ke pelanggan.</li>
@@ -168,13 +181,13 @@
 
         <!-- Artikel terkait -->
         <section aria-labelledby="artikel-terkait">
-        <h5 class="fw-bold mt-5 mb-3" id="artikel-terkait">Artikel Terkait</h5>
+        <h2 class="sec-title mt-5 mb-3" id="artikel-terkait">Artikel Terkait</h2>
         <div class="row g-3 mb-5">
           <div class="col-md-4">
             <div class="card related-card h-100 border-0 shadow-sm">
               <div class="card-body">
                 <span class="badge bg-brand-soft text-brand mb-2"><i class="bi bi-tag"></i> LLM</span>
-                <h6 class="card-title"><a href="blog.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h6>
+                <h3 class="card-title related-title"><a href="blog.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h3>
               </div>
             </div>
           </div>
@@ -182,7 +195,7 @@
             <div class="card related-card h-100 border-0 shadow-sm">
               <div class="card-body">
                 <span class="badge bg-brand-soft text-brand mb-2"><i class="bi bi-tag"></i> Etika AI</span>
-                <h6 class="card-title"><a href="blog.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis</a></h6>
+                <h3 class="card-title related-title"><a href="blog.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis</a></h3>
               </div>
             </div>
           </div>
@@ -190,7 +203,7 @@
             <div class="card related-card h-100 border-0 shadow-sm">
               <div class="card-body">
                 <span class="badge bg-brand-soft text-brand mb-2"><i class="bi bi-tag"></i> Otomasi</span>
-                <h6 class="card-title"><a href="blog.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI 24 Jam</a></h6>
+                <h3 class="card-title related-title"><a href="blog.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI 24 Jam</a></h3>
               </div>
             </div>
           </div>
@@ -199,20 +212,20 @@
 
         <!-- Komentar -->
         <section aria-labelledby="komentar">
-        <h5 class="fw-bold mb-3" id="komentar"><i class="bi bi-chat-dots"></i> Komentar (2)</h5>
+        <h2 class="sec-title mb-3" id="komentar"><i class="bi bi-chat-dots"></i> Komentar (2)</h2>
 
         <div class="d-flex gap-3 mb-4">
           <div class="avatar-circle">RS</div>
           <div>
             <p class="fw-semibold mb-1">Rendy S.</p>
-            <p class="text-secondary small mb-0">Artikelnya membantu banget buat pemula kayak saya yang baru mulai eksplor AI untuk toko online.</p>
+            <p class="text-muted-safe small mb-0">Artikelnya membantu banget buat pemula kayak saya yang baru mulai eksplor AI untuk toko online.</p>
           </div>
         </div>
         <div class="d-flex gap-3 mb-4">
           <div class="avatar-circle">MP</div>
           <div>
             <p class="fw-semibold mb-1">Maria P.</p>
-            <p class="text-secondary small mb-0">Setuju sama poin "mulai dari use case kecil" — kami coba dari caption promosi dulu, hasilnya lumayan.</p>
+            <p class="text-muted-safe small mb-0">Setuju sama poin "mulai dari use case kecil" — kami coba dari caption promosi dulu, hasilnya lumayan.</p>
           </div>
         </div>
 
@@ -245,10 +258,10 @@
             </svg>
             TobaMind AI
           </div>
-          <p class="text-secondary small">Solusi AI untuk UMKM dan bisnis lokal Sumatera Utara.</p>
+          <p class="footer-text-safe small">Solusi AI untuk UMKM dan bisnis lokal Sumatera Utara.</p>
         </div>
         <div class="col-6 col-lg-2">
-          <h6 class="mb-3">Navigasi</h6>
+          <h3 class="footer-title">Navigasi</h3>
           <ul class="list-unstyled small">
             <li class="mb-2"><a href="index.html" class="link-light link-underline-opacity-0 text-decoration-none">Beranda</a></li>
             <li class="mb-2"><a href="blog.html" class="link-light link-underline-opacity-0 text-decoration-none">Blog</a></li>
@@ -256,12 +269,12 @@
           </ul>
         </div>
         <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Kontak</h6>
-          <p class="text-secondary small mb-0">halo@tobamind.ai<br />+62 812-0000-0000<br />Laguboti, Toba, Sumut</p>
+          <h3 class="footer-title">Kontak</h3>
+          <p class="footer-text-safe small mb-0">halo@tobamind.ai<br />+62 812-0000-0000<br />Laguboti, Toba, Sumut</p>
         </div>
       </div>
       <hr class="border-secondary mt-4 mb-3" />
-      <p class="text-center text-secondary small mb-0">&copy; 2026 TobaMind AI. Dibuat untuk studi kasus praktikum PABWE.</p>
+      <p class="text-center footer-text-safe small mb-0">&copy; 2026 TobaMind AI. Dibuat untuk studi kasus praktikum PABWE.</p>
     </div>
   </footer>
 

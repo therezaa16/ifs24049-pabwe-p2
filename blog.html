@@ -21,6 +21,9 @@
       --brand-dark: #3730a3;
       --brand-soft: #eef2ff;
       --accent: #f59e0b;
+      --accent-text: #92400e; /* versi gelap accent, lolos kontras WCAG AA di atas putih/terang */
+      --gray-safe: #475569;   /* pengganti #6c757d yang lebih gelap (kontras cukup di bg terang) */
+      --gray-on-dark: #adb5bd; /* abu-abu terang utk teks sekunder di atas footer gelap */
     }
     body { font-family: "Inter", sans-serif; background: #f8fafc; }
     h1, h2, h3, .navbar-brand, .fw-display { font-family: "Sora", sans-serif; }
@@ -45,7 +48,19 @@
     .blog-card { transition: transform .2s ease, box-shadow .2s ease; border: 1px solid #e2e8f0; }
     .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(30,27,46,.1); }
     .hero-bar { background: var(--brand-soft); }
+
+    /* ==== Perbaikan kontras warna (WCAG 2 AA) ==== */
+    .brand-accent-text { color: var(--accent-text); } /* ganti text-warning bawaan Bootstrap yg terlalu terang */
+    .text-muted-safe { color: var(--gray-safe) !important; }         /* ganti text-secondary di bg terang */
+    .footer-text-safe { color: var(--gray-on-dark) !important; }     /* ganti text-secondary di footer gelap */
+    .btn-outline-secondary { color: var(--gray-safe); border-color: #ced4da; }
+    .btn-outline-secondary:hover { color: #fff; background: var(--gray-safe); border-color: var(--gray-safe); }
+
+    /* ==== Perbaikan urutan heading (heading-order), tampilan visual dipertahankan ==== */
+    h2.card-heading { font-size: 1.25rem; font-weight: 500; margin-bottom: .5rem; }
+    h3.footer-title { font-size: 1rem; font-weight: 600; margin-bottom: .75rem; }
   </style>
+
 </head>
 <body>
 
@@ -61,7 +76,7 @@
           <line x1="9" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
           <line x1="25" y1="9" x2="17" y2="25" stroke="currentColor" stroke-width="2" />
         </svg>
-        TobaMind <span class="text-warning">AI</span>
+        TobaMind <span class="brand-accent-text">AI</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -77,14 +92,14 @@
     </div>
   </nav>
 
-  <!-- PAGE HEADER -->
-  <div class="hero-bar py-5">
+  <!-- PAGE HEADER (dibungkus <header> supaya masuk landmark, memperbaiki isu 'region') -->
+  <header class="hero-bar py-5">
     <div class="container">
       <p class="text-brand fw-semibold mb-1"><i class="bi bi-journal-text"></i> Blog</p>
       <h1 class="fw-display fw-bold">Insight seputar Artificial Intelligence</h1>
-      <p class="text-secondary mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis  ditulis untuk pembaca umum maupun pelaku UMKM.</p>
+      <p class="text-muted-safe mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis — ditulis untuk pembaca umum maupun pelaku UMKM.</p>
     </div>
-  </div>
+  </header>
 
   <!-- konten utama halaman (semantic: <main>) -->
   <main>
@@ -111,8 +126,8 @@
             </div>
             <div class="card-body d-flex flex-column">
               <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Generative AI</span>
-              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none stretched-link-title">Apa itu Generative AI dan Bagaimana Bisnis Bisa Memanfaatkannya</a></h5>
-              <p class="card-text text-secondary small flex-grow-1">Kenalan dengan Generative AI dan contoh penerapannya untuk konten, desain, hingga layanan pelanggan bisnis kecil.</p>
+              <h2 class="card-title card-heading"><a href="blog-detail.html" class="text-dark text-decoration-none stretched-link-title">Apa itu Generative AI dan Bagaimana Bisnis Bisa Memanfaatkannya</a></h2>
+              <p class="card-text text-muted-safe small flex-grow-1">Kenalan dengan Generative AI dan contoh penerapannya untuk konten, desain, hingga layanan pelanggan bisnis kecil.</p>
               <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
                 <span><i class="bi bi-person"></i> Tim TobaMind</span>
                 <span><i class="bi bi-calendar3"></i> 3 Sep 2026</span>
@@ -131,8 +146,8 @@
             </div>
             <div class="card-body d-flex flex-column">
               <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> LLM</span>
-              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h5>
-              <p class="card-text text-secondary small flex-grow-1">Penjelasan sederhana tentang cara kerja LLM, model di balik chatbot AI yang sekarang banyak dipakai bisnis.</p>
+              <h2 class="card-title card-heading"><a href="blog-detail.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h2>
+              <p class="card-text text-muted-safe small flex-grow-1">Penjelasan sederhana tentang cara kerja LLM, model di balik chatbot AI yang sekarang banyak dipakai bisnis.</p>
               <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
                 <span><i class="bi bi-person"></i> Tim TobaMind</span>
                 <span><i class="bi bi-calendar3"></i> 28 Agu 2026</span>
@@ -151,8 +166,8 @@
             </div>
             <div class="card-body d-flex flex-column">
               <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Etika AI</span>
-              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis: Apa yang Perlu Diperhatikan</a></h5>
-              <p class="card-text text-secondary small flex-grow-1">Prinsip dasar etika AI  transparansi, privasi data, dan tanggung jawab  yang penting dipahami pelaku usaha.</p>
+              <h2 class="card-title card-heading"><a href="blog-detail.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis: Apa yang Perlu Diperhatikan</a></h2>
+              <p class="card-text text-muted-safe small flex-grow-1">Prinsip dasar etika AI — transparansi, privasi data, dan tanggung jawab — yang penting dipahami pelaku usaha.</p>
               <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
                 <span><i class="bi bi-person"></i> Tim TobaMind</span>
                 <span><i class="bi bi-calendar3"></i> 15 Agu 2026</span>
@@ -171,8 +186,8 @@
             </div>
             <div class="card-body d-flex flex-column">
               <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Otomasi</span>
-              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI dalam Melayani Pelanggan 24 Jam</a></h5>
-              <p class="card-text text-secondary small flex-grow-1">Mengulas alur kerja chatbot AI, dari memahami pesan pelanggan hingga memberi respons yang relevan secara otomatis.</p>
+              <h2 class="card-title card-heading"><a href="blog-detail.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI dalam Melayani Pelanggan 24 Jam</a></h2>
+              <p class="card-text text-muted-safe small flex-grow-1">Mengulas alur kerja chatbot AI, dari memahami pesan pelanggan hingga memberi respons yang relevan secara otomatis.</p>
               <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
                 <span><i class="bi bi-person"></i> Tim TobaMind</span>
                 <span><i class="bi bi-calendar3"></i> 2 Agu 2026</span>
@@ -203,10 +218,10 @@
             </svg>
             TobaMind AI
           </div>
-          <p class="text-secondary small">Solusi AI untuk UMKM dan bisnis lokal Sumatera Utara.</p>
+          <p class="footer-text-safe small">Solusi AI untuk UMKM dan bisnis lokal Sumatera Utara.</p>
         </div>
         <div class="col-6 col-lg-2">
-          <h6 class="mb-3">Navigasi</h6>
+          <h3 class="footer-title">Navigasi</h3>
           <ul class="list-unstyled small">
             <li class="mb-2"><a href="index.html" class="link-light link-underline-opacity-0 text-decoration-none">Beranda</a></li>
             <li class="mb-2"><a href="blog.html" class="link-light link-underline-opacity-0 text-decoration-none">Blog</a></li>
@@ -214,12 +229,12 @@
           </ul>
         </div>
         <div class="col-6 col-lg-3">
-          <h6 class="mb-3">Kontak</h6>
-          <p class="text-secondary small mb-0">halo@tobamind.ai<br />+62 812-0000-0000<br />Laguboti, Toba, Sumut</p>
+          <h3 class="footer-title">Kontak</h3>
+          <p class="footer-text-safe small mb-0">halo@tobamind.ai<br />+62 812-0000-0000<br />Laguboti, Toba, Sumut</p>
         </div>
       </div>
       <hr class="border-secondary mt-4 mb-3" />
-      <p class="text-center text-secondary small mb-0">&copy; 2026 TobaMind AI. Dibuat untuk studi kasus praktikum PABWE.</p>
+      <p class="text-center footer-text-safe small mb-0">&copy; 2026 TobaMind AI. Dibuat untuk studi kasus praktikum PABWE.</p>
     </div>
   </footer>
 
