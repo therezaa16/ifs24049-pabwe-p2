@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog AI — TobaMind AI</title>
+  <title>Blog AI - TobaMind AI</title>
   <meta name="description" content="Blog TobaMind AI: artikel seputar Generative AI, LLM, etika AI, dan otomasi bisnis untuk UMKM." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,18 +30,18 @@
     .text-brand { color: var(--brand) !important; }
     .bg-brand-soft { background: var(--brand-soft) !important; }
     .cover-placeholder {
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 15 / 9;
       border-radius: .5rem .5rem 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.4rem;
-      color: #fff;
+      overflow: hidden;
     }
-    .cover-1 { background: linear-gradient(135deg, #4338ca, #6366f1); }
-    .cover-2 { background: linear-gradient(135deg, #0ea5e9, #4338ca); }
-    .cover-3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
-    .cover-4 { background: linear-gradient(135deg, #16a34a, #0ea5e9); }
+
+    .cover-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
     .blog-card { transition: transform .2s ease, box-shadow .2s ease; border: 1px solid #e2e8f0; }
     .blog-card:hover { transform: translateY(-5px); box-shadow: 0 16px 32px rgba(30,27,46,.1); }
     .hero-bar { background: var(--brand-soft); }
@@ -82,7 +82,7 @@
     <div class="container">
       <p class="text-brand fw-semibold mb-1"><i class="bi bi-journal-text"></i> Blog</p>
       <h1 class="fw-display fw-bold">Insight seputar Artificial Intelligence</h1>
-      <p class="text-secondary mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis — ditulis untuk pembaca umum maupun pelaku UMKM.</p>
+      <p class="text-secondary mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis ditulis untuk pembaca umum maupun pelaku UMKM.</p>
     </div>
   </div>
 
@@ -104,7 +104,9 @@
       <!-- Artikel 1 -->
       <div class="col-md-6 col-lg-3">
         <div class="card blog-card h-100">
-          <div class="cover-placeholder cover-1"><i class="bi bi-stars"></i></div>
+      <div class="cover-placeholder">
+        <img src="assets/images/Layar1.jpg" alt="Generative AI">
+      </div>
           <div class="card-body d-flex flex-column">
             <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Generative AI</span>
             <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none stretched-link-title">Apa itu Generative AI dan Bagaimana Bisnis Bisa Memanfaatkannya</a></h5>
@@ -122,7 +124,9 @@
       <!-- Artikel 2 -->
       <div class="col-md-6 col-lg-3">
         <div class="card blog-card h-100">
-          <div class="cover-placeholder cover-2"><i class="bi bi-chat-square-dots"></i></div>
+          <div class="cover-placeholder">
+          <img src="assets/images/Layar2.jpg" alt="Large Language Model">
+        </div>
           <div class="card-body d-flex flex-column">
             <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> LLM</span>
             <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h5>
@@ -140,11 +144,13 @@
       <!-- Artikel 3 -->
       <div class="col-md-6 col-lg-3">
         <div class="card blog-card h-100">
-          <div class="cover-placeholder cover-3"><i class="bi bi-shield-check"></i></div>
-          <div class="card-body d-flex flex-column">
+          <div class="cover-placeholder">
+          <img src="assets/images/Layar3.jpg" alt="Etika AI">
+            </div>
+        <div class="card-body d-flex flex-column">
             <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Etika AI</span>
             <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis: Apa yang Perlu Diperhatikan</a></h5>
-            <p class="card-text text-secondary small flex-grow-1">Prinsip dasar etika AI — transparansi, privasi data, dan tanggung jawab — yang penting dipahami pelaku usaha.</p>
+            <p class="card-text text-secondary small flex-grow-1">Prinsip dasar etika AI transparansi, privasi data, dan tanggung jawab yang penting dipahami pelaku usaha.</p>
             <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
               <span><i class="bi bi-person"></i> Tim TobaMind</span>
               <span><i class="bi bi-calendar3"></i> 15 Agu 2026</span>
@@ -158,7 +164,9 @@
       <!-- Artikel 4 -->
       <div class="col-md-6 col-lg-3">
         <div class="card blog-card h-100">
-          <div class="cover-placeholder cover-4"><i class="bi bi-robot"></i></div>
+         <div class="cover-placeholder">
+          <img src="assets/images/Layar4.jpg" alt="Otomasi AI">
+            </div>
           <div class="card-body d-flex flex-column">
             <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Otomasi</span>
             <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI dalam Melayani Pelanggan 24 Jam</a></h5>
