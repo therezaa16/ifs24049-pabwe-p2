@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apa itu Generative AI? Blog TobaMind AI</title>
+  <title>Apa itu Generative AI? — Blog TobaMind AI</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -27,7 +27,7 @@
     .cover-banner {
       width: 100%;
       height: 300px;
-      border-radius: var(--radius);
+      border-radius: 1.75rem; /* fix: var(--radius) sebelumnya tidak terdefinisi di file ini */
       overflow: hidden;
       position: relative;
     }
@@ -89,7 +89,8 @@
     </div>
   </nav>
 
-  <div class="container py-5">
+  <!-- konten utama halaman (semantic: <main>) -->
+  <main class="container py-5">
 
     <!-- Breadcrumb -->
     <nav aria-label="breadcrumb" class="mb-4">
@@ -105,7 +106,7 @@
 
         <!-- Cover -->
         <div class="cover-banner mb-4">
-          <img src="assets/images/Layar1.jpg" alt="Generative AI">
+          <img src="assets/img/Layar1.jpg" alt="Generative AI">
         </div>
 
         <!-- Meta -->
@@ -123,7 +124,7 @@
         <article class="article-body">
           <p>
             Generative AI adalah kategori kecerdasan buatan yang mampu menghasilkan konten baru —
-            mulai dari teks, gambar, audio, hingga baris kode berdasarkan pola yang dipelajari
+            mulai dari teks, gambar, audio, hingga baris kode — berdasarkan pola yang dipelajari
             dari data dalam jumlah besar. Berbeda dengan sistem AI konvensional yang hanya
             mengklasifikasi atau memprediksi, generative AI benar-benar "mencipta" sesuatu yang
             baru namun tetap relevan dengan konteks yang diberikan.
@@ -132,7 +133,7 @@
             Bagi pelaku usaha, terutama UMKM, generative AI membuka peluang yang dulu terasa
             jauh dari jangkauan. Sebuah toko kecil kini bisa membuat deskripsi produk yang menarik
             secara otomatis, menyusun caption promosi di media sosial dalam hitungan detik, atau
-            bahkan menghasilkan draf desain kemasan awal semua tanpa harus menyewa tim kreatif
+            bahkan menghasilkan draf desain kemasan awal — semua tanpa harus menyewa tim kreatif
             besar. Di sinilah TobaMind AI berperan: menerjemahkan teknologi ini menjadi alat yang
             benar-benar dipakai sehari-hari oleh bisnis lokal.
           </p>
@@ -153,7 +154,7 @@
             <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mulai dari satu use case kecil, misalnya draf caption promosi.</li>
             <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Selalu review hasil AI sebelum dipublikasikan ke pelanggan.</li>
             <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Latih model atau prompt dengan data dan gaya bahasa bisnismu sendiri.</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Ukur dampaknya waktu yang dihemat, respons pelanggan, dan lainnya.</li>
+            <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Ukur dampaknya — waktu yang dihemat, respons pelanggan, dan lainnya.</li>
           </ul>
 
           <div class="alert alert-info d-flex gap-2 mt-4" role="alert">
@@ -166,7 +167,8 @@
         </article>
 
         <!-- Artikel terkait -->
-        <h5 class="fw-bold mt-5 mb-3">Artikel Terkait</h5>
+        <section aria-labelledby="artikel-terkait">
+        <h5 class="fw-bold mt-5 mb-3" id="artikel-terkait">Artikel Terkait</h5>
         <div class="row g-3 mb-5">
           <div class="col-md-4">
             <div class="card related-card h-100 border-0 shadow-sm">
@@ -193,9 +195,11 @@
             </div>
           </div>
         </div>
+        </section>
 
         <!-- Komentar -->
-        <h5 class="fw-bold mb-3"><i class="bi bi-chat-dots"></i> Komentar (2)</h5>
+        <section aria-labelledby="komentar">
+        <h5 class="fw-bold mb-3" id="komentar"><i class="bi bi-chat-dots"></i> Komentar (2)</h5>
 
         <div class="d-flex gap-3 mb-4">
           <div class="avatar-circle">RS</div>
@@ -208,7 +212,7 @@
           <div class="avatar-circle">MP</div>
           <div>
             <p class="fw-semibold mb-1">Maria P.</p>
-            <p class="text-secondary small mb-0">Setuju sama poin "mulai dari use case kecil" kami coba dari caption promosi dulu, hasilnya lumayan.</p>
+            <p class="text-secondary small mb-0">Setuju sama poin "mulai dari use case kecil" — kami coba dari caption promosi dulu, hasilnya lumayan.</p>
           </div>
         </div>
 
@@ -219,10 +223,11 @@
           </div>
           <button type="submit" class="btn btn-brand">Kirim Komentar</button>
         </form>
+        </section>
 
       </div>
     </div>
-  </div>
+  </main>
 
   <!-- FOOTER -->
   <footer class="bg-dark text-light pt-5 pb-4 mt-4">

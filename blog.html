@@ -82,107 +82,110 @@
     <div class="container">
       <p class="text-brand fw-semibold mb-1"><i class="bi bi-journal-text"></i> Blog</p>
       <h1 class="fw-display fw-bold">Insight seputar Artificial Intelligence</h1>
-      <p class="text-secondary mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis ditulis untuk pembaca umum maupun pelaku UMKM.</p>
+      <p class="text-secondary mb-0">Artikel ringkas tentang AI, LLM, dan otomasi bisnis  ditulis untuk pembaca umum maupun pelaku UMKM.</p>
     </div>
   </div>
 
-  <!-- FILTER (visual, opsional) -->
-  <div class="container mt-4">
-    <div class="d-flex flex-wrap gap-2">
-      <button class="btn btn-brand btn-sm rounded-pill">Semua</button>
-      <button class="btn btn-outline-secondary btn-sm rounded-pill">Generative AI</button>
-      <button class="btn btn-outline-secondary btn-sm rounded-pill">LLM</button>
-      <button class="btn btn-outline-secondary btn-sm rounded-pill">Etika AI</button>
-      <button class="btn btn-outline-secondary btn-sm rounded-pill">Otomasi</button>
+  <!-- konten utama halaman (semantic: <main>) -->
+  <main>
+    <!-- FILTER (visual, opsional) -->
+    <div class="container mt-4">
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-brand btn-sm rounded-pill">Semua</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill">Generative AI</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill">LLM</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill">Etika AI</button>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill">Otomasi</button>
+      </div>
     </div>
-  </div>
 
-  <!-- BLOG GRID -->
-  <div class="container py-5">
-    <div class="row g-4">
+    <!-- BLOG GRID: tiap artikel dibungkus <article> (semantic HTML5) -->
+    <section class="container py-5">
+      <div class="row g-4">
 
-      <!-- Artikel 1 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card blog-card h-100">
-      <div class="cover-placeholder">
-        <img src="assets/images/Layar1.jpg" alt="Generative AI">
-      </div>
-          <div class="card-body d-flex flex-column">
-            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Generative AI</span>
-            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none stretched-link-title">Apa itu Generative AI dan Bagaimana Bisnis Bisa Memanfaatkannya</a></h5>
-            <p class="card-text text-secondary small flex-grow-1">Kenalan dengan Generative AI dan contoh penerapannya untuk konten, desain, hingga layanan pelanggan bisnis kecil.</p>
-            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
-              <span><i class="bi bi-person"></i> Tim TobaMind</span>
-              <span><i class="bi bi-calendar3"></i> 3 Sep 2026</span>
-              <span><i class="bi bi-clock"></i> 4 mnt</span>
+        <!-- Artikel 1 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="card blog-card h-100">
+            <div class="cover-placeholder">
+              <img src="assets/img/Layar1.jpg" alt="Generative AI">
             </div>
-            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
-          </div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Generative AI</span>
+              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none stretched-link-title">Apa itu Generative AI dan Bagaimana Bisnis Bisa Memanfaatkannya</a></h5>
+              <p class="card-text text-secondary small flex-grow-1">Kenalan dengan Generative AI dan contoh penerapannya untuk konten, desain, hingga layanan pelanggan bisnis kecil.</p>
+              <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+                <span><i class="bi bi-person"></i> Tim TobaMind</span>
+                <span><i class="bi bi-calendar3"></i> 3 Sep 2026</span>
+                <span><i class="bi bi-clock"></i> 4 mnt</span>
+              </div>
+              <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
         </div>
-      </div>
 
-      <!-- Artikel 2 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card blog-card h-100">
-          <div class="cover-placeholder">
-          <img src="assets/images/Layar2.jpg" alt="Large Language Model">
-        </div>
-          <div class="card-body d-flex flex-column">
-            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> LLM</span>
-            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h5>
-            <p class="card-text text-secondary small flex-grow-1">Penjelasan sederhana tentang cara kerja LLM, model di balik chatbot AI yang sekarang banyak dipakai bisnis.</p>
-            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
-              <span><i class="bi bi-person"></i> Tim TobaMind</span>
-              <span><i class="bi bi-calendar3"></i> 28 Agu 2026</span>
-              <span><i class="bi bi-clock"></i> 5 mnt</span>
+        <!-- Artikel 2 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="card blog-card h-100">
+            <div class="cover-placeholder">
+              <img src="assets/img/Layar2.jpg" alt="Large Language Model">
             </div>
-            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
-          </div>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> LLM</span>
+              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Mengenal Large Language Model (LLM) untuk Pemula</a></h5>
+              <p class="card-text text-secondary small flex-grow-1">Penjelasan sederhana tentang cara kerja LLM, model di balik chatbot AI yang sekarang banyak dipakai bisnis.</p>
+              <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+                <span><i class="bi bi-person"></i> Tim TobaMind</span>
+                <span><i class="bi bi-calendar3"></i> 28 Agu 2026</span>
+                <span><i class="bi bi-clock"></i> 5 mnt</span>
+              </div>
+              <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </article>
         </div>
-      </div>
 
-      <!-- Artikel 3 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card blog-card h-100">
-          <div class="cover-placeholder">
-          <img src="assets/images/Layar3.jpg" alt="Etika AI">
+        <!-- Artikel 3 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="card blog-card h-100">
+            <div class="cover-placeholder">
+              <img src="assets/img/Layar3.jpg" alt="Etika AI">
             </div>
-        <div class="card-body d-flex flex-column">
-            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Etika AI</span>
-            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis: Apa yang Perlu Diperhatikan</a></h5>
-            <p class="card-text text-secondary small flex-grow-1">Prinsip dasar etika AI transparansi, privasi data, dan tanggung jawab yang penting dipahami pelaku usaha.</p>
-            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
-              <span><i class="bi bi-person"></i> Tim TobaMind</span>
-              <span><i class="bi bi-calendar3"></i> 15 Agu 2026</span>
-              <span><i class="bi bi-clock"></i> 6 mnt</span>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Etika AI</span>
+              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Etika Penggunaan AI dalam Bisnis: Apa yang Perlu Diperhatikan</a></h5>
+              <p class="card-text text-secondary small flex-grow-1">Prinsip dasar etika AI  transparansi, privasi data, dan tanggung jawab  yang penting dipahami pelaku usaha.</p>
+              <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+                <span><i class="bi bi-person"></i> Tim TobaMind</span>
+                <span><i class="bi bi-calendar3"></i> 15 Agu 2026</span>
+                <span><i class="bi bi-clock"></i> 6 mnt</span>
+              </div>
+              <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
             </div>
-            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
-          </div>
+          </article>
         </div>
-      </div>
 
-      <!-- Artikel 4 -->
-      <div class="col-md-6 col-lg-3">
-        <div class="card blog-card h-100">
-         <div class="cover-placeholder">
-          <img src="assets/images/Layar4.jpg" alt="Otomasi AI">
+        <!-- Artikel 4 -->
+        <div class="col-md-6 col-lg-3">
+          <article class="card blog-card h-100">
+            <div class="cover-placeholder">
+              <img src="assets/img/Layar4.jpg" alt="Otomasi AI">
             </div>
-          <div class="card-body d-flex flex-column">
-            <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Otomasi</span>
-            <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI dalam Melayani Pelanggan 24 Jam</a></h5>
-            <p class="card-text text-secondary small flex-grow-1">Mengulas alur kerja chatbot AI, dari memahami pesan pelanggan hingga memberi respons yang relevan secara otomatis.</p>
-            <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
-              <span><i class="bi bi-person"></i> Tim TobaMind</span>
-              <span><i class="bi bi-calendar3"></i> 2 Agu 2026</span>
-              <span><i class="bi bi-clock"></i> 4 mnt</span>
+            <div class="card-body d-flex flex-column">
+              <span class="badge bg-brand-soft text-brand mb-2 align-self-start"><i class="bi bi-tag"></i> Otomasi</span>
+              <h5 class="card-title"><a href="blog-detail.html" class="text-dark text-decoration-none">Cara Kerja Chatbot AI dalam Melayani Pelanggan 24 Jam</a></h5>
+              <p class="card-text text-secondary small flex-grow-1">Mengulas alur kerja chatbot AI, dari memahami pesan pelanggan hingga memberi respons yang relevan secara otomatis.</p>
+              <div class="d-flex align-items-center gap-3 small text-muted mt-2 mb-3">
+                <span><i class="bi bi-person"></i> Tim TobaMind</span>
+                <span><i class="bi bi-calendar3"></i> 2 Agu 2026</span>
+                <span><i class="bi bi-clock"></i> 4 mnt</span>
+              </div>
+              <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
             </div>
-            <a href="blog-detail.html" class="text-brand fw-semibold small text-decoration-none">Baca selengkapnya <i class="bi bi-arrow-right"></i></a>
-          </div>
+          </article>
         </div>
-      </div>
 
-    </div>
-  </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="bg-dark text-light pt-5 pb-4 mt-4">
